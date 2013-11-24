@@ -1,0 +1,33 @@
+<?php
+
+namespace FrancisBesset\Carew\Less;
+
+use Carew\Carew;
+use Carew\ExtensionInterface;
+use FrancisBesset\Carew\Less\EventListener\LessListener;
+use lessc;
+
+class LessExtension implements ExtensionInterface
+{
+    public function register(Carew $carew)
+    {
+        $container = $carew->getContainer();
+        $config = $container['config']['less'];
+
+        foreach ($container['themes'] as $theme) {
+            if (is_file($theme.'/'.$config['input'])) {
+                $input = $theme.'/'.$config['input'];
+                $output = $theme.'/assets/'.$config['output'];
+
+                break;
+            }
+        }
+
+        $eventDispatcher = $carew->getEventDispatcher()->addSubscriber(new LessListener(
+            new lessc(),
+            $container['filesystem'],
+            $input,
+            $output
+        ));
+    }
+}

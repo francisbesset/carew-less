@@ -1,0 +1,26 @@
+{
+    "name": "francisbesset/carew-less",
+    "description": "Less plugin for carew",
+    "license": "MIT",
+    "homepage": "https://github.com/francisbesset/carew-less",
+    "keywords": [ "carew", "less" ],
+    "authors": [
+        {
+            "name"  : "Francis Besset",
+            "email" : "francis.besset@gmail.com"
+        }
+    ],
+    "require": {
+        "carew/carew": "2.*@dev",
+        "leafo/lessphp": "~0.4"
+    },
+    "autoload": {
+        "psr-0": { "FrancisBesset\\Carew\\Less": "" }
+    },
+    "target-dir": "FrancisBesset/Carew/Less",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
