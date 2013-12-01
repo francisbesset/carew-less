@@ -19,5 +19,5 @@ engine:
 
 less:
     input: bootstrap/bootstrap.less # find $theme/bootstrap/bootstrap.less
-    output: css/main.css # write in $theme/assets/css/main.css
+    output: css/main.css # write in $webDir/css/main.css
 ```
