@@ -17,7 +17,6 @@ class LessExtension implements ExtensionInterface
         foreach ($container['themes'] as $theme) {
             if (is_file($theme.'/'.$config['input'])) {
                 $input = $theme.'/'.$config['input'];
-                $output = $theme.'/assets/'.$config['output'];
 
                 break;
             }
@@ -27,7 +26,7 @@ class LessExtension implements ExtensionInterface
             new lessc(),
             $container['filesystem'],
             $input,
-            $output
+            $config['output']
         ));
     }
 }

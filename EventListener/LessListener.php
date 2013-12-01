@@ -23,18 +23,19 @@ class LessListener implements EventSubscriberInterface
         $this->output = $output;
     }
 
-    public function onDocuments(CarewEvent $event)
+    public function onTerminate(CarewEvent $event)
     {
-        $this->filesystem->mkdir(dirname($this->output));
+        $output = $event->getArgument('webDir').'/'.$this->output;
+        $this->filesystem->mkdir(dirname($output));
 
         $this->less->importDir = dirname($this->input);
-        file_put_contents($this->output, $this->less->parse(file_get_contents($this->input)));
+        file_put_contents($output, $this->less->parse(file_get_contents($this->input)));
     }
 
     public static function getSubscribedEvents()
     {
         return array(
-            Events::DOCUMENTS => 'onDocuments',
+            Events::TERMINATE => 'onTerminate',
         );
     }
 }
