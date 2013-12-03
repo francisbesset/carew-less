@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the Less plugin for carew.
+ *
+ * (c) Francis Besset <francis.besset@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace FrancisBesset\Carew\Less\EventListener;
 
 use Carew\Event\CarewEvent;
@@ -8,6 +17,9 @@ use lessc;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Filesystem\Filesystem;
 
+/**
+ * @author Francis Besset <francis.besset@gmail.com>
+ */
 class LessListener implements EventSubscriberInterface
 {
     protected $less;
