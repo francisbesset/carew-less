@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "carew/carew": "2.*@dev",
+        "carew/carew": "~2.0@dev",
         "leafo/lessphp": "~0.4"
     },
     "autoload": {
